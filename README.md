@@ -62,6 +62,50 @@ Supported tools and their auth sources:
 | Codex | `~/.codex/auth.json` |
 | Gemini | `~/.gemini/settings.json`, `~/.gemini/oauth_credentials.json` |
 
+## Agent setup
+
+Give your AI coding agent the ability to monitor quotas and switch accounts automatically.
+
+### 1. Install the CLI
+
+```bash
+uv tool install aiq
+```
+
+### 2. Install the skill
+
+Using [skills](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add elyase/aiq
+```
+
+This installs the `aiq` skill into your agent's skills directory. The agent will automatically use `aiq` when you hit rate limits or ask about quota.
+
+### 3. Import your accounts
+
+```bash
+aiq import    # detects active logins for Claude, Codex, Gemini
+```
+
+Or add accounts manually:
+
+```bash
+# Log in to first account
+claude           # /login with alice@example.com
+aiq add claude alice@example.com
+
+# Log in to second account
+aiq logout claude
+claude           # /login with bob@example.com
+aiq add claude bob@example.com
+
+# Switch back
+aiq use claude alice@example.com
+```
+
+Now your agent can run `aiq use claude` to auto-switch when hitting limits.
+
 ## Requirements
 
 - Python 3.12+
