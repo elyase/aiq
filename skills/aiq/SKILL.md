@@ -16,7 +16,7 @@ uv tool install aiq-monitor
 
 If `aiq` is not on PATH, install from source:
 ```bash
-git clone https://github.com/elyase/aiq.git /tmp/aiq && uv tool install /tmp/aiq
+git clone https://github.com/elyase/aiq-monitor.git /tmp/aiq && uv tool install /tmp/aiq
 ```
 
 ## First run

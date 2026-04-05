@@ -31,7 +31,7 @@ uv tool install aiq-monitor
 Or from source:
 
 ```bash
-git clone https://github.com/elyase/aiq.git
+git clone https://github.com/elyase/aiq-monitor.git
 cd aiq
 uv tool install .
 ```
@@ -77,7 +77,7 @@ uv tool install aiq-monitor
 Using [skills](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add elyase/aiq
+npx skills add elyase/aiq-monitor
 ```
 
 This installs the `aiq` skill into your agent's skills directory. The agent will automatically use `aiq` when you hit rate limits or ask about quota.
